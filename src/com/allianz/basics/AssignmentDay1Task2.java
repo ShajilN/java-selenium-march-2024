@@ -28,15 +28,16 @@ public class AssignmentDay1Task2 {
 		driver.findElement(By.name("DOB")).click();
 		Select selYear=new Select(driver.findElement(By.className("ui-datepicker-year")));
 		selYear.selectByVisibleText("2022");
-//		driver.findElement(By.xpath("//option[text()='2022']")).click();
-		driver.findElement(By.className("ui-datepicker-month")).click();
-		driver.findElement(By.xpath("//option[text()='Apr']")).click();
+
+		Select selMonth=new Select(driver.findElement(By.className("ui-datepicker-month")));
+		selMonth.selectByVisibleText("Apr");
+
 		driver.findElement(By.xpath("//a[text()='14']")).click();
 		driver.findElement(By.xpath("//input[@value='PROCEED']")).click();
 		String actualText=driver.findElement(By.className("ui-dialog-content")).getText();
 		System.out.println("Text---->"+actualText);
 		
-		driver.quit();
+//		driver.quit();
 		
 
 	}
